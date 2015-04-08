@@ -1,6 +1,6 @@
 #!/bin/bash
 #Program:
-#   User can keyin filename to touch 3 new file
+#   User can keyin filename to touch 3 new files
 #History:
 #   2015/04/06  Wilson Xu   First release
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
