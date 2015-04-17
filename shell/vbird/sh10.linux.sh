@@ -26,6 +26,6 @@ declare -i date_d=$((date_total_s/60/60/24))
 if [ "$date_total_s" -lt "0" ]; then
     echo "You had been demobilization before: " $((-1*date_d)) "ago"
 else
-    declare -i date_h $(($(($date_total_s-$date_d*60*60*24))/60/60))
+    declare -i date_h=$(($(($date_total_s-$date_d*60*60*24))/60/60))
     echo "You will be demobilization after $date_d days and $date_h hours."
 fi
