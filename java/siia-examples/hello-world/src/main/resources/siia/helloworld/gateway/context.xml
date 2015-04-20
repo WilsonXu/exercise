@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.springframework.org/schema/integration"
+             xmlns:service="http://www.springframework.org/schema/integration"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/integration
+			http://www.springframework.org/schema/integration/spring-integration.xsd">
+    <channel id="names" />
+    <gateway id="helloGateway" service-interface="org.weber.siia.helloworld.gateway.HelloService" default-request-channel="names" />
+    <service-activator input-channel="names" ref="helloService" method="sayHello" />
+    <beans:bean id="helloService" class="org.weber.siia.helloworld.gateway.MyHelloService" />
+</beans:beans>

@@ -216,6 +216,7 @@
     </dependencyManagement>
     <modules>
         <module>hello-world</module>
+        <module>fundamentals</module>
     </modules>
     <build>
         <plugins>
