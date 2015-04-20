@@ -1,0 +1,14 @@
+*/target/
+target
+activemq-data
+bin
+.classpath
+.project
+.settings
+.springBeans
+.pydevproject
+*.iml
+.DS_Store
+**/.DS_Store
+MANIFEST.MF
+.idea/
