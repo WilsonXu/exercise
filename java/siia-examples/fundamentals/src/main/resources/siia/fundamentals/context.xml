@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xmlns="http://www.springframework.org/schema/integration"
              xmlns:stream="http://www.springframework.org/schema/integration/stream"
+             xmlns="http://www.springframework.org/schema/integration"
              xmlns:ws="http://www.springframework.org/schema/integration/ws"
              xsi:schemaLocation="http://www.springframework.org/schema/beans
 			http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -22,6 +22,15 @@
 
     <channel id="bookingEnrichedMealUpdates" />
     <beans:bean id="updateRequestTransformer" class="org.weber.siia.fundamentals.MealPreferenceRequestTransformer" />
-    <service-activator input-channel="" />
+    <service-activator input-channel="bookingEnrichedMealUpdates" output-channel="xmlMealUpdates"
+            ref="updateRequestTransformer" method="buildMealPreferenceUpdateRequest"/>
+
+    <channel id="xmlMealUpdates" />
+    <stream:stdout-channel-adapter channel="xmlMealUpdates" append-newline="true" />
+    <!--
+    <ws:outbound-gateway request-channel="xmlMealUpdates" uri="http://example.com/mealupdates" />
+    -->
+
+
     <beans:bean id="bookingReportingService" class="org.weber.siia.fundamentals.BookingReportingService" />
 </beans:beans>
