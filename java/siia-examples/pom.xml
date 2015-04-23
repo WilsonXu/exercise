@@ -217,6 +217,7 @@
     <modules>
         <module>hello-world</module>
         <module>fundamentals</module>
+        <module>messages-channels</module>
     </modules>
     <build>
         <plugins>
