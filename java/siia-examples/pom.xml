@@ -218,6 +218,7 @@
         <module>hello-world</module>
         <module>fundamentals</module>
         <module>messages-channels</module>
+        <module>flight-booking</module>
     </modules>
     <build>
         <plugins>
