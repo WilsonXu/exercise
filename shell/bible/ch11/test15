@@ -1,0 +1,18 @@
+#!/bin/bash
+# testing if a file is empty
+file=t15test
+touch $file
+
+if [ -s $file ]
+then
+    echo "The $file file exists and has data in it"
+else
+    echo "The $file exist and is empty"
+fi
+date > $file
+if [ -s $file ]
+then
+    echo "The $file file has data in it"
+else
+    echo "The $file exist is still empty"
+fi

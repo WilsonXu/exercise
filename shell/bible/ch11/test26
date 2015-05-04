@@ -1,0 +1,14 @@
+#!/bin/bash
+# using the case command
+
+case $USER in
+wilson | barbare)
+    echo "Welcome $USER"
+    echo "Please enjoy your visit";;
+testing) 
+    echo "Special testing account";;
+jessica) 
+    echo "Do not forget to logout when you're done";;
+*)
+    echo "Sorry, you are not allowed here";;
+esac
