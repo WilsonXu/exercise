@@ -9,10 +9,12 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="org.weber.prospringintegration.channels.directchannel"/>
+    <context:component-scan base-package="org.weber.prospringintegration.channels.queuechannel"/>
     <context:component-scan base-package="org.weber.prospringintegration.channels.core"/>
 
-    <int:channel id="ticketChannel"/>
+    <int:channel id="ticketChannel" datatype="org.weber.prospringintegration.channels.core.Ticket">
+        <int:queue capacity="50" />
+    </int:channel>
 
 
 </beans>

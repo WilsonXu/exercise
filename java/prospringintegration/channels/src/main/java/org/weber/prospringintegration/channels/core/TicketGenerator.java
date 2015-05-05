@@ -60,7 +60,7 @@ public class TicketGenerator {
 
     private Ticket createTicket(Ticket.Priority priority, String description) {
         Ticket ticket = new Ticket();
-        ticket.setTicketId(this.nextTicketId);
+        ticket.setTicketId(this.nextTicketId++);
         ticket.setPriority(priority);
         ticket.setDescription(description);
         ticket.setIssueDateTime(GregorianCalendar.getInstance());
