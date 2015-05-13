@@ -1,0 +1,5 @@
+#!/bin/bash
+# testing the at command
+
+echo This script ran at `date`
+echo This is the end of the script >&2
