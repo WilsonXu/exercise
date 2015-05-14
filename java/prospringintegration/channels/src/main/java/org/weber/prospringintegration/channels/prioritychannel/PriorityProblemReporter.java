@@ -2,6 +2,7 @@ package org.weber.prospringintegration.channels.prioritychannel;
 
 import org.springframework.integration.MessageHeaders;
 import org.springframework.integration.message.GenericMessage;
+import org.springframework.stereotype.Component;
 import org.weber.prospringintegration.channels.core.Ticket;
 
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import java.util.Map;
 /**
  * Created by wxu on 5/5/2015.
  */
+@Component
 public class PriorityProblemReporter extends ProblemReporter {
     @Override
     public void openTicket(Ticket ticket) {

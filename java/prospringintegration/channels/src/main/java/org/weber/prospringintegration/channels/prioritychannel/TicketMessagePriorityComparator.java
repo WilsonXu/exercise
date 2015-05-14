@@ -1,6 +1,7 @@
 package org.weber.prospringintegration.channels.prioritychannel;
 
 import org.springframework.integration.Message;
+import org.springframework.stereotype.Component;
 import org.weber.prospringintegration.channels.core.Ticket;
 
 import java.util.Comparator;
@@ -8,6 +9,7 @@ import java.util.Comparator;
 /**
  * Created by wxu on 5/5/2015.
  */
+@Component
 public class TicketMessagePriorityComparator implements Comparator<Message<Ticket>> {
     @Override
     public int compare(Message<Ticket> message1, Message<Ticket> message2) {
