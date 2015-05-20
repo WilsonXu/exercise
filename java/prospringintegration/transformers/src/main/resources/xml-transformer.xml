@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/integration
+    http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+    http://www.springframework.org/schema/integration/xml
+    http://www.springframework.org/schema/integration/xml/spring-integration-xml.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <context:component-scan base-package="org.weber.prospringintegration.transform" />
+    <int-xml:marshalling-transformer marshaller="marshaller" result-type="StringResult" input-channel="input" output-channel="xml" />
+    <int-xml:unmarshalling-transformer unmarshaller="marshaller" input-channel="xml-string" output-channel="output" />
+    <int:object-to-string-transformer input-channel="xml" output-channel="xml-string" />
+    <int:logging-channel-adapter id="logger" log-full-message="true" level="INFO" />
+    <int:channel id="input" />
+    <int:channel id="xml">
+        <int:interceptors>
+            <int:wire-tap channel="logger"/>
+        </int:interceptors>
+    </int:channel>
+    <int:channel id="xml-string" />
+    <int:channel id="output">
+        <int:queue capacity="10" />
+    </int:channel>
+</beans>

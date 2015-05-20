@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>channels</artifactId>
     <name>channels</name>
+    <packaging>jar</packaging>
 
 
 </project>
