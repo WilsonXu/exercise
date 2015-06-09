@@ -35,6 +35,7 @@
     <modules>
         <module>channels</module>
         <module>transformers</module>
+        <module>messageflow</module>
     </modules>
 
     <dependencyManagement>
