@@ -9,9 +9,9 @@
         angular.module("exampleApp", [])
         .controller("defaultCtrl", function($scope) {
             $scope.todos = [
-            {id: 100, place: "Store", action: "Get groceries", complete: false},
-            {id: 200, place: "Home", action: "Call plumber", complete: false},
-            {id: 300, place: "Store", action: "Buy running shoes", complete: true}];
+            {id: 100, action: "Get groceries", complete: false},
+            {id: 200, action: "Call plumber", complete: false},
+            {id: 300, action: "Buy running shoes", complete: true}];
         });
     </script>
 </head>
@@ -21,7 +21,7 @@
             <div class="well">
                 <div class="form-group">
                     <label>Select an Action:</label>
-                    <select ng-model="selectValue" ng-options="item.action group by item.place for item in todos">
+                    <select ng-model="selectValue" ng-options="item.action for item in todos">
                         <option value="">(Pick One)</option>
                     </select>
                 </div>

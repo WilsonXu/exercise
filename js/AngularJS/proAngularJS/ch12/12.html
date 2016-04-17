@@ -8,10 +8,8 @@
     <script>
         angular.module("exampleApp", [])
         .controller("defaultCtrl", function($scope) {
-            $scope.todos = [
-            {id: 100, place: "Store", action: "Get groceries", complete: false},
-            {id: 200, place: "Home", action: "Call plumber", complete: false},
-            {id: 300, place: "Store", action: "Buy running shoes", complete: true}];
+            $scope.requireValue = true;
+            $scope.matchPattern = new RegExp("^[a-z]");
         });
     </script>
 </head>
@@ -20,14 +18,16 @@
         <form name="myForm" novalidate>
             <div class="well">
                 <div class="form-group">
-                    <label>Select an Action:</label>
-                    <select ng-model="selectValue" ng-options="item.action group by item.place for item in todos">
-                        <option value="">(Pick One)</option>
-                    </select>
+                    <label>Text:</label>
+                    <input name="sample" type="text" class="form-control" ng-model="inputValue" ng-required="requireValue" ng-minlength="3" ng-maxlength="10" ng-pattern="matchPattern" />
                 </div>
             </div>
             <div class="well">
-                <p>Selected: {{selectValue || 'None'}}</p>
+                <p>Required Error: {{myForm.sample.$error.required}}</p>
+                <p>Min Length Error: {{myForm.sample.$error.minlength}}</p>
+                <p>Max Length Error: {{myForm.sample.$error.maxlength}}</p>
+                <p>Pattern Error: {{myForm.sample.$error.pattern}}</p>
+                <p>Element Valid: {{myForm.sample.$valid}}</p>
             </div>
         </form>
     </div>
