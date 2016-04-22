@@ -17,7 +17,7 @@
                     for (var i = 0; i < data.length; i++) {
                         (function() {
                             var itemElement = angular.element("<li>");
-                            element.append(itemElement);
+                            listElem.append(itemElement);
                             var index = i;
                             var watcherFn = function(watchScope) {
                                 return watchScope.$eval(propertyExpression, data[index]);

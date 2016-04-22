@@ -3,33 +3,33 @@
 <head>
     <title>Directives</title>
     <script src="../lib/angular.js"></script>
+    <style>
+        .bold {font-weight: bold;}
+    </style>
     <script>
         angular.module("exampleApp", [])
         .directive("demoDirective", function() {
             return function(scope, element, attrs) {
-                var items = element.find("li");
-                for(var i=0; i<items.length; i++) {
-                    if(items.eq(i).text()=="Oranges") {
-                        items.eq(i).css("font-weight", "bold");
-                    }
+                var listElem = angular.element("<ol>");
+                element.append(listElem);
+                for(var i=0; i<scope.names.length; i++) {
+                    listElem.append(angular.element("<li>").append(angular.element("<span>").text(scope.names[i])));
                 }
+                var buttons = element.find("button");
+                buttons.on("click", function() {
+                    element.find("li").toggleClass("bold");
+                });
             }
         })
         .controller("defaultCtrl", function($scope) {
+            $scope.names = ["Apples", "Bananas", "Oranges"];
         });
     </script>
 </head>
 <body ng-controller="defaultCtrl">
     <h3>Fruit</h3>
-    <ol demo-directive>
-        <li>Apples</li>
-        <ul>
-            <li>Bananas</li>
-            <li>Cherries</li>
-            <li>Oranges</li>
-        </ul>
-        <li>Oranges</li>
-        <li>Pears</li>
-    </ol>
+    <div demo-directive>
+        <button>Click Me</button>
+    </div>
 </body>
 </html>

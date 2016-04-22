@@ -2,7 +2,6 @@
 <html ng-app="exampleApp">
 <head>
     <title>Directives</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="../lib/angular.js"></script>
     <link href="../lib/bootstrap.css" rel="stylesheet" />
     <link href="../lib/bootstrap-theme.css" rel="stylesheet" />
@@ -13,10 +12,12 @@
                 var data = scope[attrs["unorderedList"]];
                 var propertyExpression = attrs["listProperty"];
                 if (angular.isArray(data)) {
-                    var listElem = angular.element("<ul>").appendTo(element);
+                    var listElem = angular.element("<ul>");
+                    element.append(listElem);
                     for (var i = 0; i < data.length; i++) {
                         (function() {
-                            var itemElement = angular.element("<li>").appendTo(listElem);
+                            var itemElement = angular.element("<li>");
+                            element.append(itemElement);
                             var index = i;
                             var watcherFn = function(watchScope) {
                                 return watchScope.$eval(propertyExpression, data[index]);
