@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Directive Scopes</title>
+    <script src="../lib/angular.js"></script>
+    <link href="../lib/bootstrap.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module("exampleApp", [])
+        .directive("scopeDemo", function() {
+            return {
+                template: "<div class='panel-body'>Name: <input ng-model='name' />"
+            }
+        })
+        .controller("defaultCtrl", function($scope) {
+        })
+        .controller("secondCtrl", function($scope) {
+        });
+    </script>
+</head>
+<body>
+    <div class="panel panel-default">
+        <div ng-controller="defaultCtrl" class="panel-body" scope-demo></div>
+        <div ng-controller="secondCtrl" class="panel-body" scope-demo></div>
+    </div>
+</body>
+</html>
