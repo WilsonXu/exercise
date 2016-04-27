@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Expressions</title>
+    <script src="../lib/angular.js"></script>
+    <link href="../lib/bootstrap.css" rel="stylesheet" />
+    <link href="../lib/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module("exampleApp",[])
+        .config(function($interpolateProvider) {
+            $interpolateProvider.startSymbol("!!");
+            $interpolateProvider.endSymbol("!!");
+        })
+        .controller("defaultCtrl", function($scope, $sce) {
+            $scope.dataValue = "100.23";
+        })
+        .directive("evalExpression", function($interpolate) {
+            var interpolationFn = $interpolate("This total is: !!amount | currency!! (including tax)");
+            return {
+                scope: {
+                    amount: "=amount",
+                    tax: "=tax"
+                },
+                link: function(scope, element, attrs) {
+                    scope.$watch("amount", function(newValue) {
+                        var localData = {
+                            total: Number(newValue) + (Number(newValue) * (Number(scope.tax)/100))
+                        };
+                        element.text(interpolationFn(scope, localData));
+                    });
+                }
+            };
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="well">
+        <p><input class="form-control" ng-model="dataValue" /></p>
+        <div>
+            <span eval-expression amount="dataValue" tax="10"></span>
+            <p>Original amount: !!dataValue!!</p>
+        </div>
+    </div>
+</body>
+</html>
