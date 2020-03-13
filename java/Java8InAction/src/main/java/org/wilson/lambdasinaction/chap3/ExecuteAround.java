@@ -9,7 +9,7 @@ import java.util.Objects;
  * Created by wilson on 7/8/16.
  */
 public class ExecuteAround {
-    public static void main(String ... args) throws IOException {
+    public static void main(String... args) throws IOException {
         String result = processFileLimited();
         System.out.println(result);
 
@@ -25,19 +25,19 @@ public class ExecuteAround {
     public static String processFileLimited() throws IOException {
         String path = Objects.requireNonNull(ExecuteAround.class.getClassLoader().getResource("org/wilson/lambdasinaction/chap3/data.txt")).getPath();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            return  br.readLine();
+            return br.readLine();
         }
     }
 
     public static String processFile(BufferedReaderProcessor p) throws IOException {
         String path = Objects.requireNonNull(ExecuteAround.class.getClassLoader().getResource("org/wilson/lambdasinaction/chap3/data.txt")).getPath();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            return  p.process(br);
+            return p.process(br);
         }
     }
 
     @FunctionalInterface
-    public interface  BufferedReaderProcessor {
+    public interface BufferedReaderProcessor {
         String process(BufferedReader br) throws IOException;
     }
 
