@@ -22,13 +22,15 @@ public class ExecuteAround {
     }
 
     public static String processFileLimited() throws IOException {
-            try (BufferedReader br = new BufferedReader(new FileReader("org/wilson/lambdasinaction/chap3/data.txt"))) {
-                return  br.readLine();
+        String path = ExecuteAround.class.getClassLoader().getResource("org/wilson/lambdasinaction/chap3/data.txt").getPath();
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            return  br.readLine();
         }
     }
 
     public static String processFile(BufferedReaderProcessor p) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader("org/wilson/lambdasinaction/chap3/data.txt"))) {
+        String path = ExecuteAround.class.getClassLoader().getResource("org/wilson/lambdasinaction/chap3/data.txt").getPath();
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             return  p.process(br);
         }
     }
