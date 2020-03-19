@@ -1,13 +1,11 @@
 package org.wilson.corejava.ch12.threads;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 
+@Slf4j
 public class Bank {
-    public static final Logger LOGGER = LoggerFactory.getLogger("org.wilson.corejava.ch12.threads.Bank");
-
     private final double[] accounts;
 
     public Bank(int n, double initialBalance) {
@@ -27,8 +25,8 @@ public class Bank {
         if (accounts[from] < amount) return;
         accounts[from] -= amount;
         accounts[to] += amount;
-        if (LOGGER.isInfoEnabled()) {
-            LOGGER.info(String.format("%10.2f from %d to %d Total Balance: %10.2f%n",
+        if (log.isInfoEnabled()) {
+            log.info(String.format("%10.2f from %d to %d Total Balance: %10.2f%n",
                     amount, from, to, this.getTotalBalance()));
         }
     }
