@@ -1,9 +1,12 @@
-package org.wilson.corejava.ch12.threads;
+package org.wilson.corejava.v1.ch12.threads;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.IntStream;
 
+/**
+ * Created by wilson on 2020/3/23.
+ */
 @Slf4j
 public class ThreadTest {
     public static final int DELAY = 10;

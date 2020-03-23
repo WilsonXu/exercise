@@ -26,4 +26,5 @@ hs_err_pid*
 
 # IDE Files
 .idea/
+target/
 corejava.iml
