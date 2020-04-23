@@ -47,8 +47,8 @@ public class Indexer {
         return this.writer.numDocs();
     }
 
-    private void indexFile(File f) throws  Exception {
-        System.out.println("Indexing " + f.getCanonicalPath());
+private void indexFile(File f) throws  Exception {
+    System.out.println("Indexing " + f.getCanonicalPath());
         Document doc = this.getDocument(f);
         this.writer.addDocument(doc);
     }

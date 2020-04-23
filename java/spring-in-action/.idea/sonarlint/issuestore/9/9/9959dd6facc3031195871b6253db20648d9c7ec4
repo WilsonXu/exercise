@@ -1,0 +1,6 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(™Û¶8‹²½½‘.
+|
+java:S1450"ZRemove the "environment" field and declare it as a local variable in the relevant methods.(¼Êê¬ıÿÿÿÿ8Û­¾‘.
+Q
+java:S1068"/Remove this unused "environment" private field.(¼Êê¬ıÿÿÿÿ8Û­¾‘.
