@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity arms race</title>
+    <style>
+        body {
+            color: black;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+        }
+
+        .intro {
+            font-size: 1.2em;
+            color: gray;
+            padding: 1em;
+        }
+
+        .news .intro {
+            color: blue;
+        }
+
+        #home .intro {
+            color: black;
+            background-color: lightgray;
+        }
+
+        #home .intro a {
+            color: green;
+        }
+
+        a.call-to-action {
+            background-color: green;
+            color: white;
+            padding: .25em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="home">
+        <h1>Home page</h1>
+        <section class="intro">
+            <p>Lorem ipsum <a href="#">And a link</a> to something</p>
+            <p>Some more text. <a href="#" class="call-to-action">Buy my product</a></p>
+        </section>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quam earum aut dignissimos sunt vitae qui
+            doloremque illo obcaecati asperiores! Maiores, nobis officia velit nam consequatur sed sint alias nisi.</p>
+        <p><a href="#" class="call-to-action">Buy my product</a></p>
+    </div>
+    <hr />
+    <div>
+        <h1>Normal page</h1>
+        <section class="intro">
+            <p>Lorem ipsum <a href="#">And a link</a> to something</p>
+            <p>Some more text. <a href="#" class="call-to-action">Buy my product</a></p>
+        </section>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quam earum aut dignissimos sunt vitae qui
+            doloremque illo obcaecati asperiores! Maiores, nobis officia velit nam consequatur sed sint alias nisi.</p>
+        <p><a href="#" class="call-to-action">Buy my product</a></p>
+    </div>
+</body>
+
+</html>

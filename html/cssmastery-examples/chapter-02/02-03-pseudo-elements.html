@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo elements</title>
+    <style>
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            max-width: 15em;
+            margin:  1em auto .5em;
+            text-align: center;
+            font-family: Georgia, Times, "Times New Roman", serif;
+            font-weight: 300;
+            font-size: 3em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid #999;
+        }
+
+        .chapter {
+            margin: 0 auto;
+            max-width: 36em;
+            padding-left: 10em;
+            position: relative;
+        }
+
+        .chapter p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin: 0 0 1.5em;
+        }
+
+        .chapter::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1em;
+            height: 1em;
+            content: '”';
+            font-size: 20em;
+            line-height: 1;
+            margin-top: -0.1em;
+            color: #ccc;
+            speak: none;
+        }
+
+        .chapter p::first-letter {
+            float: left;
+            font-size: 3em;
+            line-height: 0.8;
+            margin-top: .15em;
+            margin-right: .1em;
+            font-family: Georgia, Times, "Times New Roman", serif;
+        }
+
+        .chapter p::first-line {
+            font-family: Georgia, Times, "Times New Roman", serif;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>A Study In Scarlet</h1>
+    <section class="chapter">
+        <p>In the year 1878 I took my degree of Doctor of Medicine of the University of London, and proceeded to Netley
+            to go through the course prescribed for surgeons in the army. Having completed my studies there, I was duly
+            attached to the Fifth Northumberland Fusiliers as Assistant Surgeon.</p>
+    </section>
+</body>
+
+</html>
