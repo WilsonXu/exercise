@@ -1,0 +1,25 @@
+<h3 class="bg-primary text-white p-3">{{ getName() }}'s To Do List</h3>
+
+<div class="my-1">
+  <input type="text" class="form-control" #todoText />
+  <button class="btn btn-primary mt-1" (click)="addItem(todoText.value)">Add</button>
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <th></th>
+    <th>Description</th>
+    <th>Done</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of getTodoItems(); let i= index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.action }}</td>
+      <td [ngSwitch]="item.done">
+        <input id="{{ 'input' + i }}" type="checkbox" [(ngModel)]="item.done" />
+        <label for="{{ 'input' + i }}" *ngSwitchCase="true">Yes</label>
+        <label for="{{ 'input' + i }}" *ngSwitchDefault>No</label>
+      </td>
+    </tr>
+  </tbody>
+</table>
