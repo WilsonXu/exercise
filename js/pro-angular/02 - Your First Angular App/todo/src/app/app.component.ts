@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Model, TodoItem } from './model';
 
 @Component({
-  selector: 'todo-app',
+  selector: 'app-todo',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
@@ -18,7 +18,7 @@ export class AppComponent {
   }
 
   addItem(newItem: string): void {
-    if (newItem != '') {
+    if (newItem !== '') {
       this.model.items.push(new TodoItem(newItem, false));
     }
   }
