@@ -1,15 +1,0 @@
-
-s
-java:S1192a"]Define a constant instead of duplicating this literal "The thread pool is destroyed" 6 times.(¹©÷§
-s	java:S135C"YReduce the total number of break and continue statements in this loop to use at most one.(»İÄÀüÿÿÿÿ
-V	java:S107!"AConstructor has 8 parameters, which is greater than 7 authorized.(şÅèÇ
-`
-java:S3014¦"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(Ûèá†
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(êÙù„ıÿÿÿÿ
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ğŞÉê
-1
-java:S3626X"Remove this redundant jump.(ÉŠ©ƒ
-t
-java:S2142F"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€

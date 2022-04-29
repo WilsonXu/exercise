@@ -1,8 +1,0 @@
-
-a
-java:S11926"KDefine a constant instead of duplicating this literal "The User [" 3 times.(‡áÑ›
-N	java:S1066"9Replace this use of System.out or System.err by a logger.(‡áÑ›
-S	java:S106>"9Replace this use of System.out or System.err by a logger.(µÏâþøÿÿÿÿ
-N	java:S106F"9Replace this use of System.out or System.err by a logger.(Õí¿»
-t
-java:S2142["^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
