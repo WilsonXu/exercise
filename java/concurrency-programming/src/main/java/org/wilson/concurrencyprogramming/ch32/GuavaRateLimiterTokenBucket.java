@@ -19,6 +19,7 @@ public class GuavaRateLimiterTokenBucket {
     public void bookOrder(IntConsumer consumer) throws NoProductException, OrderFailedException {
         if (this.monitor.enterIf(this.guard)) {
             try {
+                //noinspection UnstableApiUsage
                 if (!this.rateLimiter.tryAcquire(90, TimeUnit.MILLISECONDS)) {
                     throw new OrderFailedException("The order is failed, please try again later.");
                 } else {

@@ -1,4 +1,0 @@
-package org.wilson.concurrencyprogramming.ch31.jmh_generated;
-public class AtomicReferenceExample4_MonitorRace_jmhType extends AtomicReferenceExample4_MonitorRace_jmhType_B3 {
-}
-

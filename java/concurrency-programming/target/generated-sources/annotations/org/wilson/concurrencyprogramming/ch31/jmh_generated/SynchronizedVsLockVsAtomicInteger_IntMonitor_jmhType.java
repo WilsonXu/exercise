@@ -1,4 +1,0 @@
-package org.wilson.concurrencyprogramming.ch31.jmh_generated;
-public class SynchronizedVsLockVsAtomicInteger_IntMonitor_jmhType extends SynchronizedVsLockVsAtomicInteger_IntMonitor_jmhType_B3 {
-}
-
