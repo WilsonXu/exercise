@@ -1,0 +1,6 @@
+
+a
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(°μÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ƒή”΄ύÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(©…μφ
+7	java:S131""Add a default case to this switch.(°μÿ

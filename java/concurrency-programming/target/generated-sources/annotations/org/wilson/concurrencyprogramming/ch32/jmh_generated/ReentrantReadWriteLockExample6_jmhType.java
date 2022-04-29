@@ -1,0 +1,4 @@
+package org.wilson.concurrencyprogramming.ch32.jmh_generated;
+public class ReentrantReadWriteLockExample6_jmhType extends ReentrantReadWriteLockExample6_jmhType_B3 {
+}
+
