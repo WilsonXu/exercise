@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+version = 0.1
+sourceCompatibility = 18
+buildDir = 'out'
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.wilson.gia.todo.ToDoApp'
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
