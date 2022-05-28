@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <commons-fileupload>1.2</commons-fileupload>
-        <junit.version>4.8.2</junit.version>
+        <junit.version>4.13.1</junit.version>
         <spring.integration.version>2.0.1.RELEASE</spring.integration.version>
         <spring.version>3.0.5.RELEASE</spring.version>
         <hornetq.version>2.1.2.Final</hornetq.version>
