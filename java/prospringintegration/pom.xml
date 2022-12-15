@@ -15,7 +15,7 @@
         <commons-fileupload>1.2</commons-fileupload>
         <junit.version>4.8.2</junit.version>
         <spring.integration.version>2.0.1.RELEASE</spring.integration.version>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <hornetq.version>2.1.2.Final</hornetq.version>
         <activemq.version>5.4.1</activemq.version>
         <netty.version>3.2.2.Final</netty.version>
